@@ -324,6 +324,50 @@ _output = bn128.pairing(Buffer.from(input, 'hex')).toString('hex')
 console.timeEnd("BP")
 assert(output == _output)
 
+// 实验环境
+// - Intel i7-8750H 16GB RAM
+// - Windows 11
+// - 协议使用Nodejs实现，使用noble-secp256k1密码库
+// - 对称加密算法采用AES-256-CBC
+// - 非对称加密算法采用RSA-2048
+// - 双线性对椭圆曲线采用bn128
+
+// 实验数据
+// ----------------------------
+// intra-AD V2V
+// ----------------------------
+// intra-AD V2V auth: 7.858ms
+// intra-AD V2V key negotiation: 23.954ms
+
+// ----------------------------
+// inter-AD V2V
+// ----------------------------
+// inter-AD V2V auth: 23.479ms
+// inter-AD V2V key negotiation: 23.605ms
+
+// ----------------------------
+// intra-GD V2I
+// ----------------------------
+// intra-GD V2I auth: 3.889ms
+// intra-GD V2I key negotiation: 22.162ms
+
+// ----------------------------
+// inter-GD V2I
+// ----------------------------
+// inter-GD V2I auth: 4.08ms
+// inter-GD V2I key negotiation: 23.851ms
+
+// ----------------------------
+// secp256k1 point operations
+// ----------------------------
+// secp256k1 point multiply: 0.458ms
+// secp256k1 point add: 0.161ms
+
+// SE: 0.524ms
+// SD: 0.232ms
+// CV: 3.958ms
+// PM: 0.521ms
+// PA: 0.127ms
 // AE: 1.387ms
 // AD: 0.126ms
 // EX: 0.883ms
