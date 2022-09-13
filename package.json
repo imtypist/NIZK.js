@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "noble-bls12-381": "^0.15.0",
+    "noble-secp256k1": "^1.2.14",
+    "rustbn.js": "^0.2.0"
+  }
+}
